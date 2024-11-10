@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Welcome Page</title>
+    </head>
+    <body>
+        <button onclick="fall()">O</button>
+        <button onclick="getZone()">Z</button>
+        <button onclick="getTop()">T</button>
+        <button onclick="reset()">Reset</button>
+        <p></p>
+        <var id="t"> 0 </var> T
+        <p></p>
+        <var id="z"> 0 </var> Z
+        <p></p>
+        Attempt: <var id="a"> 0 </var>
+    </body>
+    <script>
+        var count = 0;
+        var zoneClimb = false ;
+        var topClimb = false ;
+        
+        function fall(){
+            count++ ;
+            document.getElementById("a").innerHTML = count;
+        }
+        
+        function getZone(){
+            count++ ;
+            document.getElementById("a").innerHTML = count;
+            if(!zoneClimb){
+                document.getElementById("z").innerHTML = document.getElementById("a").innerHTML ;
+                zoneClimb = true ;
+            }
+        }
+        
+        function getTop(){
+            count++ ;
+            document.getElementById("a").innerHTML = count;
+            if(!topClimb){
+                document.getElementById("t").innerHTML = document.getElementById("a").innerHTML ;
+                topClimb = true ;
+            }
+            if(!zoneClimb){
+                document.getElementById("z").innerHTML = document.getElementById("a").innerHTML ;
+                zoneClimb = true ;
+            }
+        }
+        
+        function reset(){
+            count = 0;
+            zoneClimb = false ;
+            topClimb = false ;
+            document.getElementById("a").innerHTML = 0;
+            document.getElementById("z").innerHTML = 0;
+            document.getElementById("t").innerHTML = 0;
+        }
+    </script>
+</html>
