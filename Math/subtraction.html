@@ -1,13 +1,13 @@
 <html>
     <head>
-        <title>Addition</title>
+        <title>Subtraction</title>
     </head>
     <body>
         <a href="../index.html">Back to Home Page</a>
         <p></p>
         <var id="count">Question 1</var>:
         <p></p>
-        <var id="first">1</var> +
+        <var id="first">5</var> -
         <var id="second">2</var> =
         <input type="number" id="inputNum">
         <p></p>
@@ -17,15 +17,15 @@
         <script>
             var incorrectCount = 0;
             var count = 1;
-            var a = 1;
+            var a = 5;
             var b = 2;
             var ans = 3;
             
             function check(){
                 if(document.getElementById("inputNum").value == ans){
-                    a = Math.floor(Math.random()*(count*5+10));
                     b = Math.floor(Math.random()*(count*5+10));
-                    ans = a + b;
+                    a = b + Math.floor(Math.random()*(count*5+10));
+                    ans = a - b;
                     count++ ;
                     document.getElementById("context").innerHTML = "Correct! Life Remaining: " + (5 - incorrectCount);
                     document.getElementById("count").innerHTML = "Question " + count;
