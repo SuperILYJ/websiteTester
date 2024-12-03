@@ -17,14 +17,20 @@
         <script>
             var incorrectCount = 0;
             var count = 1;
-            var a = 1;
-            var b = 2;
-            var ans = 3;
+            var a = 45;
+            var b = 45;
+            var ans = 90;
             
             function check(){
                 if(document.getElementById("inputNum").value == ans){
-                    a = 180 / (Math.floor(Math.random()*3) + 2);
-                    b = 180 / (Math.floor(Math.random()*3) + 2);
+                    a = 180 / (Math.floor(Math.random()*4) + 2);
+                    b = 180 / (Math.floor(Math.random()*4) + 2);
+                    if(a == 36){
+                        a = 30 ;
+                    }
+                    if(b == 36){
+                        b = 30
+                    }
                     ans = a + b;
                     count++ ;
                     document.getElementById("context").innerHTML = "Correct! Life Remaining: " + (5 - incorrectCount);
