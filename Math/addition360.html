@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Addition</title>
+    </head>
+    <body>
+        <a href="../index.html">Back to Home Page</a>
+        <p></p>
+        <var id="count">Question 1</var>:
+        <p></p>
+        <var id="first">45</var> +
+        <var id="second">45</var> =
+        <input type="number" id="inputNum">
+        <p></p>
+        <p id="context">Please enter the answer and press submit button</p>
+        <input type="submit" onclick="check()">
+        <p id="result"></p>
+        <script>
+            var incorrectCount = 0;
+            var count = 1;
+            var a = 1;
+            var b = 2;
+            var ans = 3;
+            
+            function check(){
+                if(document.getElementById("inputNum").value == ans){
+                    a = 180 / (Math.floor(Math.random()*3) + 2);
+                    b = 180 / (Math.floor(Math.random()*3) + 2);
+                    ans = a + b;
+                    count++ ;
+                    document.getElementById("context").innerHTML = "Correct! Life Remaining: " + (5 - incorrectCount);
+                    document.getElementById("count").innerHTML = "Question " + count;
+                    document.getElementById("first").innerHTML = a;
+                    document.getElementById("second").innerHTML = b;
+                }
+                else{
+                    incorrectCount++ ;
+                    document.getElementById("context").innerHTML = "Incorrect! Life Remaining: " + (5 - incorrectCount);
+                    if(incorrectCount == 5){
+                        document.getElementById("result").innerHTML = ("Final score: " + (count - 1) + ", keep going if you want") ;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
